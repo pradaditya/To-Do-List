@@ -1,3 +1,8 @@
+:root {
+    --color-light-grey: #dfe1e5;
+    --color-grey: #9aa0a6;
+    --color-black: #021526;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,6 +10,7 @@
 }
 body {
     font-family: Helvetica, sans-serif;
+    color: var(--color-black);
 }
 .task-container {
     width: 1080px;
@@ -12,10 +18,15 @@ body {
 }
 h1 {
     margin: 16px 0;
+    font-size: 40px;
+}
+.input-task,
+.task-display,
+.task-item {
+    border: 1px solid var(--color-light-grey);
 }
 .input-task {
     width: 100%;
-    border: 1px solid #d9d9d9;
     padding: 8px;
     border-radius: 24px;
     display: flex;
@@ -42,7 +53,6 @@ button {
 }
 .task-display {
     width: 100%;
-    border: 1px solid #d9d9d9;
     border-radius: 24px;
     padding: 8px;
 }
@@ -51,10 +61,12 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #d9d9d9;
     border-radius: 16px;
     padding: 8px;
     margin-bottom: 8px;
+}
+.task-item:last-child {
+    margin-bottom: 0;
 }
 .task-text {
     margin-left: 10px;
@@ -72,4 +84,19 @@ button {
 }
 .task-checkbox:checked + p {
     text-decoration: line-through;
+}
+.material-symbols-outlined {
+    color: var(--color-grey);
+    transition: all 0.3s ease-in-out;
+}
+.material-symbols-outlined:hover {
+    color: var(--color-black);
+}
+@media screen and (max-width: 428px) {
+    .task-container {
+        width: 85%;
+    }
+    h1 {
+        font-size: 32px;
+    }
 }
